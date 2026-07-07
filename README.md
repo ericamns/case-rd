@@ -1,8 +1,8 @@
-\# People Analytics — Case Técnico
+# People Analytics — Case Técnico
 
 
 
-\## Visão Geral
+## Visão Geral
 
 
 
@@ -18,15 +18,15 @@ Fluxo desenvolvido:
 
 
 
-\- Tratamento e preparação dos dados com Python
+- Tratamento e preparação dos dados com Python
 
-\- Transformação utilizando Pandas
+- Transformação utilizando Pandas
 
-\- Estruturação da camada de dados
+- Estruturação da camada de dados
 
-\- Criação de consultas SQL para análise
+- Criação de consultas SQL para análise
 
-\- Construção do dashboard em Power BI
+- Construção do dashboard em Power BI
 
 
 
@@ -34,11 +34,11 @@ O projeto foi desenvolvido considerando boas práticas de organização, rastrea
 
 
 
-\---
+---
 
 
 
-\# Arquitetura do Projeto
+# Arquitetura do Projeto
 
 
 
@@ -94,11 +94,11 @@ Power BI Dashboard
 
 
 
-\---
+---
 
 
 
-\# Estrutura do Projeto
+# Estrutura do Projeto
 
 
 
@@ -118,15 +118,15 @@ case-rd/
 
 │   └── processed/
 
-│       └── people\_analytics.db
+│       └── people_analytics.db
 
 │
 
 ├── sql/
 
-│   ├── 01\_schema.sql
+│   ├── 01_schema.sql
 
-│   └── 02\_views.sql
+│   └── 02_views.sql
 
 │
 
@@ -148,17 +148,17 @@ case-rd/
 
 
 
-\---
+---
 
 
 
-\# Pipeline de Dados
+# Pipeline de Dados
 
 
 
 
 
-\## 1. Base Original
+## 1. Base Original
 
 
 
@@ -178,29 +178,29 @@ A base contém informações relacionadas a:
 
 
 
-\- Dados cadastrais
+- Dados cadastrais
 
-\- Unidade
+- Unidade
 
-\- Cargo
+- Cargo
 
-\- Gestor
+- Gestor
 
-\- Datas de admissão e desligamento
+- Datas de admissão e desligamento
 
-\- Status do colaborador
+- Status do colaborador
 
-\- Informações organizacionais
-
-
+- Informações organizacionais
 
 
 
-\---
+
+
+---
 
 
 
-\# 2. Processo ETL — Python
+# 2. Processo ETL — Python
 
 
 
@@ -222,17 +222,17 @@ Principais etapas realizadas:
 
 
 
-\- Leitura da base original
+- Leitura da base original
 
-\- Padronização dos campos
+- Padronização dos campos
 
-\- Tratamento dos tipos de dados
+- Tratamento dos tipos de dados
 
-\- Conversão de datas
+- Conversão de datas
 
-\- Criação de campos calculados
+- Criação de campos calculados
 
-\- Preparação da tabela analítica para consumo
+- Preparação da tabela analítica para consumo
 
 
 
@@ -242,11 +242,11 @@ Exemplos de campos derivados:
 
 
 
-\- Tempo de casa
+- Tempo de casa
 
-\- Faixas de tempo de empresa
+- Faixas de tempo de empresa
 
-\- Indicadores de status do colaborador
+- Indicadores de status do colaborador
 
 
 
@@ -256,23 +256,23 @@ A saída desse processo gera a camada tratada:
 
 
 
-`data/processed/people\_analytics.db`
+`data/processed/people_analytics.db`
 
 
 
 
 
-\---
+---
 
 
 
-\# 3. Modelagem SQL
+# 3. Modelagem SQL
 
 
 
 
 
-\## Schema
+## Schema
 
 
 
@@ -280,7 +280,7 @@ Arquivo:
 
 
 
-`sql/01\_schema.sql`
+`sql/01_schema.sql`
 
 
 
@@ -290,11 +290,11 @@ Responsável pela definição da estrutura da tabela principal utilizada no proj
 
 
 
-\---
+---
 
 
 
-\## Views Analíticas
+## Views Analíticas
 
 
 
@@ -302,7 +302,7 @@ Arquivo:
 
 
 
-`sql/02\_views.sql`
+`sql/02_views.sql`
 
 
 
@@ -320,17 +320,17 @@ As views foram estruturadas para facilitar o consumo dos indicadores no Power BI
 
 
 
-\---
+---
 
 
 
-\# Indicadores Construídos
+# Indicadores Construídos
 
 
 
 
 
-\## Headcount
+## Headcount
 
 
 
@@ -348,21 +348,21 @@ Permite análises como:
 
 
 
-\- Evolução do quadro
+- Evolução do quadro
 
-\- Distribuição por unidade
+- Distribuição por unidade
 
-\- Perfil dos colaboradores
-
-
+- Perfil dos colaboradores
 
 
 
-\---
+
+
+---
 
 
 
-\## Tempo de Casa (Tenure)
+## Tempo de Casa (Tenure)
 
 
 
@@ -380,11 +380,11 @@ A análise permite identificar a distribuição dos colaboradores por faixas com
 
 
 
-\- Menos de 1 ano
+- Menos de 1 ano
 
-\- Entre 1 e 2 anos
+- Entre 1 e 2 anos
 
-\- Acima de 2 anos
+- Acima de 2 anos
 
 
 
@@ -396,11 +396,11 @@ Esse indicador apoia análises relacionadas ao perfil da população atual e mat
 
 
 
-\---
+---
 
 
 
-\## Turnover
+## Turnover
 
 
 
@@ -418,21 +418,21 @@ Permite acompanhar:
 
 
 
-\- Rotatividade
+- Rotatividade
 
-\- Distribuição dos desligamentos
+- Distribuição dos desligamentos
 
-\- Possíveis pontos de atenção por área ou unidade
-
-
+- Possíveis pontos de atenção por área ou unidade
 
 
 
-\---
+
+
+---
 
 
 
-\## Qualidade dos Dados
+## Qualidade dos Dados
 
 
 
@@ -444,21 +444,21 @@ Esse ponto representa uma oportunidade de melhoria em:
 
 
 
-\- Governança de dados de RH
+- Governança de dados de RH
 
-\- Padronização cadastral
+- Padronização cadastral
 
-\- Qualidade das informações utilizadas nos indicadores
-
-
+- Qualidade das informações utilizadas nos indicadores
 
 
 
-\---
+
+
+---
 
 
 
-\# Dashboard Power BI
+# Dashboard Power BI
 
 
 
@@ -482,55 +482,55 @@ Principais análises:
 
 
 
-\- Headcount
+- Headcount
 
-\- Distribuição por tempo de casa
+- Distribuição por tempo de casa
 
-\- Turnover
+- Turnover
 
-\- Unidade
+- Unidade
 
-\- Perfil dos colaboradores
+- Perfil dos colaboradores
 
-\- Qualidade cadastral
-
-
-
-
-
-\---
-
-
-
-\# Tecnologias Utilizadas
-
-
-
-\- Python
-
-\- Pandas
-
-\- SQL
-
-\- PostgreSQL
-
-\- Power BI
-
-\- Power Query
-
-\- Figma
-
-\- Canva
+- Qualidade cadastral
 
 
 
 
 
-\---
+---
 
 
 
-\# Objetivo Final
+# Tecnologias Utilizadas
+
+
+
+- Python
+
+- Pandas
+
+- SQL
+
+- PostgreSQL
+
+- Power BI
+
+- Power Query
+
+- Figma
+
+- Canva
+
+
+
+
+
+---
+
+
+
+# Objetivo Final
 
 
 
